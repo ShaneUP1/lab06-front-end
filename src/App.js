@@ -6,6 +6,7 @@ import {
 import './App.css';
 import FetchPage from './FetchPage';
 import CreatePage from './CreatePage';
+import Header from './Header';
 
 import React, { Component } from 'react'
 
@@ -14,6 +15,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Router>
+          <Header />
           <Switch>
             <Route
               path="/"
