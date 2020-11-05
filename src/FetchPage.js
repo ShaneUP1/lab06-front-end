@@ -23,7 +23,7 @@ export default class FetchPage extends Component {
                     <div className="mtnInfo">
                         <h2>{mountain.name}</h2>
                         <p>{mountain.elevation}</p>
-                        <p>{mountain.mtn_range}</p>
+                        <p>{mountain.range_name}</p>
                         <p>{mountain.drive_to_top.toString()}</p>
                         <p>{mountain.owner_id}</p>
                     </div>
