@@ -49,18 +49,18 @@ export default class CreatePage extends Component {
         // console.log(this.state.name, this.state.elevation, this.state.rangeId, this.state.drive_to_top, userFromWherever.userId)
         // console.log(this.state.drive_to_top)
         return (
-            <div>
+            <div className='create-main'>
                 Enter a new fourteener
-                <form onSubmit={this.handleSubmit}>
-                    <label>
+                <form onSubmit={this.handleSubmit} className='form'>
+                    <label className='name'>
                         Fourteener Name
                         <input onChange={e => this.setState({ name: e.target.value })} />
                     </label>
-                    <label>
+                    <label className='elevation'>
                         Elevation
                         <input onChange={e => this.setState({ elevation: e.target.value })} type='number' />
                     </label>
-                    <label>
+                    <label className='range'>
                         Mountain Range
                         <select onChange={this.handleChange} >
                             <option></option>
@@ -71,7 +71,7 @@ export default class CreatePage extends Component {
                             }
                         </select>
                     </label>
-                    <label>
+                    <label className="to-top">
                         Can Drive to the Top?
                         <select onChange={e => this.setState({ drive_to_top: e.target.value })}>
                             <option value=''></option>

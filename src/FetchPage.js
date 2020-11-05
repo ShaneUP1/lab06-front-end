@@ -18,13 +18,13 @@ export default class FetchPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='mtn-spread'>
                 {this.state.data.map(mountain =>
-                    <div className="mtnInfo">
+                    <div className="mtn-card">
                         <h2>{mountain.name}</h2>
-                        <p>{mountain.elevation}</p>
-                        <p>{mountain.range_name}</p>
-                        <p>{mountain.drive_to_top.toString()}</p>
+                        <p>Elevation: {mountain.elevation}</p>
+                        <p>Mountain Range: {mountain.range_name}</p>
+                        <p>Can you drive to the top: {mountain.drive_to_top.toString()}</p>
                         <p>{mountain.owner_id}</p>
                     </div>
                 )}
