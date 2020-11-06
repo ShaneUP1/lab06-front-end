@@ -35,7 +35,6 @@ span {
 }
 
 .submit-button {
-  background-color: greenyellow;
   border-radius: 5px;
 }
 
@@ -87,10 +86,12 @@ span {
   flex-wrap: wrap;
   height: 300px;
   width: 250px;
-  border: 1px white solid;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   margin: 15px;
   border-radius: 10px;
-  background-color: rgba(142, 189, 210, 0.648);
+  background-color: rgba(142, 189, 210, 0.86);
+  box-shadow: 5px 5px 2px lightgray;
 }
 
 .mtn-spread {
