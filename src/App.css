@@ -1,10 +1,12 @@
 
-
+body {
+  background-image: url('./Background.png');
+}
 form > label {
   margin: 5px;
 }
 
-label > input {
+select > input {
   margin: 5px;
 }
 
@@ -12,8 +14,29 @@ p {
   margin: 5px;
 }
 
+h1 {
+  font-size: 38px;
+  margin-bottom: 0px;
+}
+
+span {
+  text-align: center;
+}
+
 .name, .elevation, .range, .to-top {
   margin: 5px;
+}
+
+.delete-button {
+  margin: 10px;
+  background-color: red;
+  color: yellow;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: greenyellow;
+  border-radius: 5px;
 }
 
 
@@ -38,6 +61,7 @@ p {
   align-items: flex-start;
   text-align: right;
   margin-right: 10px;
+  font-weight:bold;
 }
 
 .update-div {
@@ -63,9 +87,10 @@ p {
   flex-wrap: wrap;
   height: 300px;
   width: 250px;
-  border: 1px black solid;
-  margin: 5px;
+  border: 1px white solid;
+  margin: 15px;
   border-radius: 10px;
+  background-color: rgba(142, 189, 210, 0.648);
 }
 
 .mtn-spread {
