@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
     updateFourteener,
     fetchOneFourteener,
-    fetchMtnRanges
+    fetchMtnRanges,
+    deleteFourteener
 } from './utils.js'
 
 
@@ -42,14 +43,20 @@ export default class UpdatePage extends Component {
                 elevation: this.state.elevation,
                 mtn_range_id: this.state.mtn_range_id,
                 drive_to_top: this.state.drive_to_top,
-                owner_id: userFromWherever
+                owner_id: userFromWherever.userId
             })
+        this.props.history.push('/');
+    }
+
+    handleDelete = async (e) => {
+        await deleteFourteener(this.props.match.params.id)
+
         this.props.history.push('/');
     }
 
     render() {
 
-        console.log(this.state.name);
+        console.log(this.state);
 
         return (
             <div className='update-div'>
@@ -86,9 +93,9 @@ export default class UpdatePage extends Component {
                             <option value='false'>Nope</option>
                         </select>
                     </label>
-                    <button>Submit Changes</button>
+                    <button className='submit-button'>Submit Changes</button>
                 </form>
-
+                <button className='delete-button' onClick={this.handleDelete}>DELETE from the list</button>
             </div>
         )
     }

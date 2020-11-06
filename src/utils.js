@@ -47,7 +47,7 @@ export async function createFourteener(newFourteener) {
 export async function updateFourteener(someId, newFourteener) {
     try {
         await fetch
-            .put(`https://stark-escarpment-62671.herokuapp.com/${someId}`)
+            .put(`https://stark-escarpment-62671.herokuapp.com/fourteeners/${someId}`)
             .send(newFourteener);
 
         return;
@@ -58,7 +58,7 @@ export async function updateFourteener(someId, newFourteener) {
 
 export async function deleteFourteener(someId) {
     try {
-        await fetch.get(`https://stark-escarpment-62671.herokuapp.com/fourteeners/${someId}`);
+        await fetch.delete(`https://stark-escarpment-62671.herokuapp.com/fourteeners/${someId}`);
 
         return;
     } catch (err) {
