@@ -40,8 +40,8 @@ export default class UpdatePage extends Component {
             {
                 name: this.state.name,
                 elevation: this.state.elevation,
-                drive_to_top: this.state.drive_to_top,
                 mtn_range_id: this.state.mtn_range_id,
+                drive_to_top: this.state.drive_to_top,
                 owner_id: userFromWherever
             })
         this.props.history.push('/');
@@ -49,7 +49,7 @@ export default class UpdatePage extends Component {
 
     render() {
 
-        console.log(this.state.mtn_range_id);
+        console.log(this.state.name);
 
         return (
             <div className='update-div'>
