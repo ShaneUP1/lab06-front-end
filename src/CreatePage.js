@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import request from 'superagent';
+import { fetchMtnRanges, createFourteener } from './utils.js'
 
 const userFromWherever = {
     userId: 1
@@ -12,9 +12,8 @@ export default class CreatePage extends Component {
     }
 
     componentDidMount = async () => {
-        const response = await request.get('https://stark-escarpment-62671.herokuapp.com/mtn_ranges');
-
-        this.setState({ mtn_ranges: response.body });
+        const mtn_ranges = await fetchMtnRanges();
+        this.setState({ mtn_ranges });
     }
 
     handleSubmit = async (e) => {
@@ -28,9 +27,7 @@ export default class CreatePage extends Component {
             owner_id: userFromWherever.userId
         }
 
-        await request
-            .post('https://stark-escarpment-62671.herokuapp.com/fourteeners')
-            .send(newFourteener);
+        await createFourteener(newFourteener);
 
         this.props.history.push('/');
     }
@@ -46,20 +43,22 @@ export default class CreatePage extends Component {
 
     render() {
 
-        // console.log(this.state.name, this.state.elevation, this.state.rangeId, this.state.drive_to_top, userFromWherever.userId)
-        // console.log(this.state.drive_to_top)
         return (
             <div className='create-main'>
-                Enter a new fourteener
+                <h2>Enter a new fourteener</h2>
+
                 <form onSubmit={this.handleSubmit} className='form'>
+
                     <label className='name'>
                         Fourteener Name
                         <input onChange={e => this.setState({ name: e.target.value })} />
                     </label>
+
                     <label className='elevation'>
                         Elevation
                         <input onChange={e => this.setState({ elevation: e.target.value })} type='number' />
                     </label>
+
                     <label className='range'>
                         Mountain Range
                         <select onChange={this.handleChange} >
@@ -71,6 +70,7 @@ export default class CreatePage extends Component {
                             }
                         </select>
                     </label>
+
                     <label className="to-top">
                         Can Drive to the Top?
                         <select onChange={e => this.setState({ drive_to_top: e.target.value })}>
@@ -79,7 +79,9 @@ export default class CreatePage extends Component {
                             <option value='false'>Nope</option>
                         </select>
                     </label>
+
                     <button>Submit</button>
+
                 </form>
 
             </div>
