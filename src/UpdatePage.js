@@ -49,6 +49,7 @@ export default class UpdatePage extends Component {
     }
 
     handleDelete = async (e) => {
+        alert('Are you sure you want to delete this fourteener from the list?')
         await deleteFourteener(this.props.match.params.id)
 
         this.props.history.push('/');
